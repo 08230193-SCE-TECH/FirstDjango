@@ -1,7 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
    <head>
        <title>First Django App</title>
+         <link rel="stylesheet" href="{% static 'styles/styles.css'%}">
    </head>
    <body style="background-color: black; color: white;">
        <h1>Welcome!</h1>
@@ -10,13 +12,13 @@
        <table border="1" cellpadding="5" style="background-color: white; color: black; border-collapse: collapse;">
            <tr>
                <th>Name</th>
-               <th>Student ID</th>
+               <th>email</th>
                <th>Age</th>
            </tr>
            {% for student in students %} <!-- Loop through the students passed from the view. In here students refers to the list of Student objects created in the view -->
            <tr>
                <td>{{ student.name }}</td>
-               <td>{{ student.studentID }}</td>
+               <td>{{ student.email }}</td>
                <td>{{ student.age }}</td>
            </tr>
            {% endfor %} <!-- End of the loop   we are using django tempaltes
